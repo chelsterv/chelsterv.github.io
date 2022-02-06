@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/chelsterv/chelsterv.github.io/blob/main/IMG_0228.jpeg" width="300" />
+<img src="https://github.com/chelsterv/chelsterv.github.io/blob/main/IMG_0228.jpeg?raw=true" width="300" />
 </p>
 
 ## Welcome to GitHub Pages
