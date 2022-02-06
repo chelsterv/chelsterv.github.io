@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://github.com/chelsterv/chelsterv.github.io/blob/main/IMG_0228.jpeg" width="300" />
+</p>
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/chelsterv/chelsterv.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
