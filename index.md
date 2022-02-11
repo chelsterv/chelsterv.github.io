@@ -12,15 +12,16 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 
 ### Enhancement One - Software Design and Engineering
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<https://github.com/chelsterv/chelsterv.github.io/3-2MilestoneTwo/>
 
 ### Enhancement Two - Algorithms and Data Structures
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<https://github.com/chelsterv/chelsterv.github.io/4-2MilestoneThree/>
 
 ### Enhancement Three - Databases
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<https://github.com/chelsterv/chelsterv.github.io/5-2MilestoneFour/>
 
 
+### Animal Shelter Project
 
