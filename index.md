@@ -12,15 +12,15 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 
 ### Enhancement One - Software Design and Engineering
 
-<https://github.com/chelsterv/chelsterv.github.io/3-2MilestoneTwo/>
+<https://github.com/chelsterv/chelsterv.github.io/tree/main/3-2MilestoneTwo>
 
 ### Enhancement Two - Algorithms and Data Structures
 
-<https://github.com/chelsterv/chelsterv.github.io/4-2MilestoneThree/>
+<https://github.com/chelsterv/chelsterv.github.io/tree/main/4-2MilestoneThree>
 
 ### Enhancement Three - Databases
 
-Upload Milestone 5-2 Databases
+<https://github.com/chelsterv/chelsterv.github.io/tree/main/McCoy_5-2MilestoneFour>
 
 
 ### Animal Shelter Project
