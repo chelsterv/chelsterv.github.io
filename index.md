@@ -8,7 +8,7 @@ I am a 28 year retired Navy veteran that has been working in the software design
 
 ### Code Review Techniques
 
-[![Code Review](https://img.youtube.com/vi/d4EaUvMKCyU/0.jpg)](https://youtu.be/d4EaUvMKCyU){:target="_blank"}
+<a href="https://youtu.be/d4EaUvMKCyU" target="_blank">[![Code Review](https://img.youtube.com/vi/d4EaUvMKCyU/0.jpg)]</a>
 
 ### Enhancements
 
