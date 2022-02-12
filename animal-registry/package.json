@@ -1,0 +1,59 @@
+{
+  "name": "animal-shelter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "cross-env DOTENV_CONFIG_PATH=./tests/.env c8 mocha -r dotenv/config --no-config",
+    "start": "node -r dotenv/config index.js",
+    "pretest": "eslint \"./src/**\"",
+    "posttest": "c8 report --reporter=html",
+    "db:setup": "node -r dotenv/config index.js --db-setup"
+  },
+  "mocha": {
+    "require": "esm",
+    "spec": "tests/**/*.test.js"
+  },
+  "c8": {
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/db/**/*.js",
+      "src/screens/**/*.js"
+    ]
+  },
+  "author": "Larry McCoy",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "boxen": "^6.2.1",
+    "chalk": "^4.1.2",
+    "csv-parse": "^5.0.4",
+    "inquirer": "^8.2.0",
+    "inquirer-autocomplete-prompt": "^1.4.0",
+    "inquirer-date-prompt": "^2.0.1",
+    "line-reader": "^0.4.0",
+    "lodash.get": "^4.4.2",
+    "luxon": "^2.3.0",
+    "ora": "^6.0.1",
+    "sequelize": "^6.13.0",
+    "sqlite3": "^4.2.0",
+    "table": "^6.8.0"
+  },
+  "devDependencies": {
+    "c8": "^7.11.0",
+    "chai": "^4.3.6",
+    "cross-env": "^7.0.3",
+    "dotenv": "^11.0.0",
+    "eslint": "^8.6.0",
+    "esm": "^3.2.25",
+    "mocha": "^9.2.0",
+    "sinon": "^12.0.1"
+  },
+  "engines": {
+    "node": "^16.13.2"
+  }
+}
