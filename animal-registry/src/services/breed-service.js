@@ -26,28 +26,34 @@ export default class BreedService {
   /**
    * Finds breed records
    * @param {any} where Object containing search criteria
-   * @param {{includeSpecies: boolean, page: number, limit: number, includeCount: boolean, returnPlain: boolean, orderBy: string}} options
+   * @param {{includeSpecies: boolean, page: number, limit: number, includeCount: boolean, returnPlain: boolean, orderBy: string, throwOnError: boolean}} options
    * @returns {Promise<{breeds:Array<any>, count: number}>|Promise<Array<any>>}
    */
   static async find(where, options = undefined) {
-    const include = [];
-    if (options?.includeSpecies) include.push(Species);
+    try {
+      const include = [];
+      if (options?.includeSpecies) include.push(Species);
 
-    const findOptions = {
-      where: enhanceWhere(where),
-      limit: options?.limit,
-      offset: (options?.page ?? 0) * (options?.limit ?? 0),
-      include: include.length ? include : undefined,
-      order: options?.orderBy ? [[options.orderBy]] : undefined
-    };
-
-    const result = await (options?.includeCount ? Breed.findAndCountAll(findOptions) : Breed.findAll(findOptions));
-
-    return Array.isArray(result) ?
-      (options?.returnPlain ? result.map((e) => e.get({ plain: true })) : result) :
-      {
-        breeds: options?.returnPlain ? result.rows.map((e) => e.get({ plain: true })) : result.rows,
-        count: result.count
+      const findOptions = {
+        where: enhanceWhere(where),
+        limit: options?.limit,
+        offset: (options?.page ?? 0) * (options?.limit ?? 0),
+        include: include.length ? include : undefined,
+        order: options?.orderBy ? [[options.orderBy]] : undefined
       };
+
+      const result = await (options?.includeCount ? Breed.findAndCountAll(findOptions) : Breed.findAll(findOptions));
+
+      return Array.isArray(result) ?
+        (options?.returnPlain ? result.map((e) => e.get({ plain: true })) : result) :
+        {
+          breeds: options?.returnPlain ? result.rows.map((e) => e.get({ plain: true })) : result.rows,
+          count: result.count
+        };
+    } catch (err) {
+      if (options?.throwOnError) throw err;
+      return undefined;
+    }
+
   }
 }
