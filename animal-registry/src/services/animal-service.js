@@ -1,3 +1,9 @@
+/**
+ * Establishes the CRUD operations associated with Animal Services
+ *
+ * Author: Larry McCoy
+ */
+
 import chalk from 'chalk';
 import get from 'lodash.get';
 import { Model, Op } from 'sequelize';

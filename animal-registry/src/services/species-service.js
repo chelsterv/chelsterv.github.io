@@ -1,3 +1,9 @@
+/**
+ * Establishes the CR operations associated with Species Services
+ *
+ * Author: Larry McCoy
+ */
+
 import Species from '../db/models/species.js';
 import { enhanceWhere } from '../utils/database-utils.js';
 

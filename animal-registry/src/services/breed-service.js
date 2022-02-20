@@ -1,3 +1,9 @@
+/**
+ * Establishes the CR operations associated with breed Services
+ *
+ * Author: Larry McCoy
+ */
+
 import Breed from '../db/models/breed.js';
 import Species from '../db/models/species.js';
 import { enhanceWhere } from '../utils/database-utils.js';

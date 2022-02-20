@@ -1,3 +1,9 @@
+/**
+ * Establishes the CR operations associated with Animal Services
+ *
+ * Author: Larry McCoy
+ */
+
 import Outcome from '../db/models/outcome.js';
 import { enhanceWhere } from '../utils/database-utils.js';
 
