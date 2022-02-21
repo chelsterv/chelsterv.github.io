@@ -1,15 +1,15 @@
 /**
- * Establishes the CR operations associated with Species Services
+ * Establishes the CR operations associated with Animal Services
  *
  * Author: Larry McCoy
  */
 
-import Species from '../db/models/species.js';
+import Outcome from '../db/models/outcome.js';
 import { enhanceWhere } from '../utils/database-utils.js';
 
-export default class SpeciesService {
+export default class OutcomeService {
   /**
-   * Creates a species and returns it when successful, otherwise undefined
+   * Creates an outcome and returns it when successful, otherwise undefined
    * is returned.
    * @param {any} data Object containing fields for creation
    * @param {{returnPlain: boolean, throwOnError:boolean}} options
@@ -17,8 +17,8 @@ export default class SpeciesService {
    */
   static async create(data, options) {
     try {
-      const species = await Species.create(data);
-      return options?.returnPlain ? species.get({ plain: true }) : species;
+      const outcome = await Outcome.create(data);
+      return options?.returnPlain ? outcome.get({ plain: true }) : outcome;
     } catch (err) {
       if (options?.throwOnError) throw err;
       return undefined;
@@ -26,7 +26,7 @@ export default class SpeciesService {
   }
 
   /**
-   * Finds species records
+   * Finds outcome records
    * @param {any} where Object containing search criteria
    * @param {{page: number, limit: number, includeCount: boolean, returnPlain: boolean, orderBy: string}} options
    * @returns {Promise<{breeds:Array<any>, count: number}>|Promise<Array<any>>}
@@ -39,12 +39,12 @@ export default class SpeciesService {
       order: options?.orderBy ? [[options.orderBy]] : undefined
     };
 
-    const result = await (options?.includeCount ? Species.findAndCountAll(findOptions) : Species.findAll(findOptions));
+    const result = await (options?.includeCount ? Outcome.findAndCountAll(findOptions) : Outcome.findAll(findOptions));
 
     return Array.isArray(result) ?
       (options?.returnPlain ? result.map((e) => e.get({ plain: true })) : result) :
       {
-        species: options?.returnPlain ? result.rows.map((e) => e.get({ plain: true })) : result.rows,
+        outcomes: options?.returnPlain ? result.rows.map((e) => e.get({ plain: true })) : result.rows,
         count: result.count
       };
   }

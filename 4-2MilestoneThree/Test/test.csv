@@ -1,0 +1,11 @@
+"","age_upon_outcome","animal_id","animal_type","breed","color","date_of_birth","datetime","monthyear","name","outcome_subtype","outcome_type","sex_upon_outcome","location_lat","location_long","age_upon_outcome_in_weeks"
+"1","3 years","L1","Cat","Domestic Shorthair","White",2014-04-10,2017-04-11 09:00:00,"2017-04-11T09:00:00","","SCRP","Transfer","Neutered Male",30.5066578739455,-97.3408780722188,156.767857142857
+"2","1 year","L2","Cat","Domestic Shorthair","Black",2015-05-02,2016-05-06 10:49:00,"2016-05-06T10:49:00","","SCRP","Transfer","Spayed Female",30.6525984560228,-97.7419963476444,52.9215277777778
+"3","2 years","L3","Dog","Chihuahua","Brown",2013-11-18,2015-12-28 18:43:00,"2015-12-28T18:43:00","Frank","","Adoption",,30.7595748121648,-97.5523753807133,110.111408730159
+"4","7 months","L4","Cat","Siamese","Black",2016-01-25,2016-08-27 18:11:00,"2016-08-27T18:11:00","Kitty","","Adoption","Intact Female",30.3188063374257,-97.7240376703891,30.8225198412698
+"5","2 years","L5","Dog","Labrador","Brown",2012-11-06,2015-05-30 13:48:00,"2015-05-30T13:48:00","Luke","","Return to Owner","Neutered Male",30.7104815618433,-97.562297435286,133.653571428571
+"6","5 years","L6","Dog","Pit Bull","",2010-01-27,2015-01-28 10:39:00,"2015-01-28T10:39:00","Lucy","Rabies Risk","Euthanasia","Spayed Female",30.6737365854231,-97.707971529467,261.063392857143
+"7","2 years","L7","Dog","Pit Bull","Brown",2012-03-03,2014-03-19 15:15:00,"2014-03-19T15:15:00","*Seth","Aggressive","Euthanasia","Neutered Male",30.2954256583441,-97.3136642110436,106.662202380952
+"8","1 year","L8","Dog","Australian Cattle Dog",,2015-10-12,2016-11-27 18:00:00,"2016-11-27T18:00:00","*Mia","","Adoption","Spayed Female",30.4443212820182,-97.7326980338793,58.9642857142857
+"9","3 years","L9","Dog","Mutt","White",2013-02-04,2016-02-11 12:41:00,"2016-02-11T12:41:00","Blessing","","Adoption","Spayed Female",30.3870648199411,-97.3684339731375,157.504067460317
+"10","3 months","L10","Cat","Domestic Shorthair","Black",2013-09-01,2013-12-08 14:58:00,"2013-12-08T14:58:00","*Taylor","","Adoption","Spayed Female",30.7583105481048,-97.618292198845,14.0890873015873

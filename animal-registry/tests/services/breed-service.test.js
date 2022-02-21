@@ -112,7 +112,6 @@ describe('BreedService', () => {
         stub.restore();
         done();
       });
-
     });
   });
 

@@ -1,5 +1,12 @@
-import Breed from "../db/models/breed.js";
-import Species from "../db/models/species.js";
+/**
+ * Establishes the CR operations associated with breed Services
+ *
+ * Author: Larry McCoy
+ */
+
+import Breed from '../db/models/breed.js';
+import Species from '../db/models/species.js';
+import { enhanceWhere } from '../utils/database-utils.js';
 
 export default class BreedService {
   /**
@@ -9,7 +16,7 @@ export default class BreedService {
    * @param {{returnPlain: boolean, throwOnError: boolean, includeSpecies: boolean}} options
    * @returns {Promise<any>}
    */
-  static async create(data, options = undefined) {
+  static async create(data, options) {
     try {
       const breed = await Breed.create(data);
       if (options?.includeSpecies) {
@@ -20,5 +27,39 @@ export default class BreedService {
       if (options?.throwOnError) throw err;
       return undefined;
     }
+  }
+
+  /**
+   * Finds breed records
+   * @param {any} where Object containing search criteria
+   * @param {{includeSpecies: boolean, page: number, limit: number, includeCount: boolean, returnPlain: boolean, orderBy: string, throwOnError: boolean}} options
+   * @returns {Promise<{breeds:Array<any>, count: number}>|Promise<Array<any>>}
+   */
+  static async find(where, options = undefined) {
+    try {
+      const include = [];
+      if (options?.includeSpecies) include.push(Species);
+
+      const findOptions = {
+        where: enhanceWhere(where),
+        limit: options?.limit,
+        offset: (options?.page ?? 0) * (options?.limit ?? 0),
+        include: include.length ? include : undefined,
+        order: options?.orderBy ? [[options.orderBy]] : undefined
+      };
+
+      const result = await (options?.includeCount ? Breed.findAndCountAll(findOptions) : Breed.findAll(findOptions));
+
+      return Array.isArray(result) ?
+        (options?.returnPlain ? result.map((e) => e.get({ plain: true })) : result) :
+        {
+          breeds: options?.returnPlain ? result.rows.map((e) => e.get({ plain: true })) : result.rows,
+          count: result.count
+        };
+    } catch (err) {
+      if (options?.throwOnError) throw err;
+      return undefined;
+    }
+
   }
 }

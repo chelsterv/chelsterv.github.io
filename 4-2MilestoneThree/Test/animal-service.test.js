@@ -1,3 +1,10 @@
+/**
+ * Establishes the CRUD operations testing for Animal Services
+ * Executes testing against database for error messaging
+ *
+ * Author: Larry McCoy
+ */
+
 import { expect } from 'chai';
 import { DateTime } from 'luxon';
 import { Model } from 'sequelize';
@@ -6,10 +13,12 @@ import database, { seed } from '../../src/db/database.js';
 import Animal from '../../src/db/models/animal.js';
 import AnimalService from '../../src/services/animal-service.js';
 
+//  Unit test for the read method of the Animal Service functionality
 describe('AnimalService', () => {
 
   describe('find', () => {
 
+    // Seed the database for Animal Service read animal method unit test
     before(async () => {
       await database.sync({ force: true });
       await seed();
@@ -101,7 +110,7 @@ describe('AnimalService', () => {
       expect(results.animals[0] instanceof Model).to.equal(true); // Instance of Model
     });
 
-    it('finds animals all as plain objects including count of total records matching criteria', async () => {
+    it('finds all animals as plain objects including count of total records matching criteria', async () => {
       const results = await AnimalService.find(undefined, { limit: 5, orderBy: 'id', includeCount: true, returnPlain: true });
 
       expect(results.animals).to.be.lengthOf(5);
@@ -134,8 +143,10 @@ describe('AnimalService', () => {
     });
   });
 
+  //  Unit test for the create method of the Animal Service functionality
   describe('create', () => {
 
+    // Seed the database for Animal Service create animal method unit test
     before(async () => {
       await database.sync({ force: true });
       await seed({ excludeAnimals: true }); // No animals will be inserted inserted
@@ -284,8 +295,10 @@ describe('AnimalService', () => {
 
   });
 
+  //  Unit test for the update method of the Animal Service functionality
   describe('update', () => {
 
+    // Seed the database for Animal Service Update animal method unit test
     beforeEach(async () => {
       await database.sync({ force: true });
       await seed();
@@ -352,8 +365,10 @@ describe('AnimalService', () => {
 
   });
 
+  //  Unit test for the delete method of the Animal Service functionality
   describe('delete', () => {
 
+    // Seed the database for Animal Service delete animal method unit test
     before(async () => {
       await database.sync({ force: true });
       await seed();
@@ -402,8 +417,10 @@ describe('AnimalService', () => {
     });
   });
 
+  //  Unit test for the color method of the Animal Service functionality
   describe('getColors', () => {
 
+    // Seed the database for Animal Service getting animal color method unit test
     before(async () => {
       await database.sync({ force: true });
       await seed();
@@ -461,8 +478,10 @@ describe('AnimalService', () => {
 
   });
 
+  //  Unit test for the sex method of the Animal Service functionality
   describe('getSexes', () => {
 
+    // Seed the database for Animal Service getting animal sex method unit test
     before(async () => {
       await database.sync({ force: true });
       await seed();
@@ -520,8 +539,10 @@ describe('AnimalService', () => {
 
   });
 
+  //  Unit test for the display table and paging method of the Animal Service functionality
   describe('getDisplayTable', () => {
 
+    // Seed the database for Animal Service getting animal table and paging method unit test
     before(async () => {
       await database.sync({ force: true });
       await seed();

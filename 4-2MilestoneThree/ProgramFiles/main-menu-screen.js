@@ -1,40 +1,37 @@
+import chalk from 'chalk';
 import inquirer from 'inquirer';
-
-const OPTION_ANIMAL_ADD = 'Register Animal';
-const OPTION_ANIMAL_DELETE = 'Delete Animal';
-const OPTION_ANIMAL_LIST = 'Display Animals';
-const OPTION_BREED_ADD = 'Add New Breed';
-const OPTION_CLEAR_SCREEN = 'Clear Screen';
-const OPTION_EXIT = 'Exit';
+import { ORANGE_RGB } from '../utils/display-utils.js';
 
 export default class MainMenuScreen {
 
-  static options = {
-    ANIMAL_ADD: OPTION_ANIMAL_ADD,
-    ANIMAL_DELETE: OPTION_ANIMAL_DELETE,
-    ANIMAL_LIST: OPTION_ANIMAL_LIST,
-    BREED_ADD: OPTION_BREED_ADD,
-    CLEAR_SCREEN: OPTION_CLEAR_SCREEN,
-    EXIT: OPTION_EXIT
+  static MENU_OPTIONS = {
+    ANIMAL_ADD: 'animal_add',
+    ANIMAL_LIST: 'animal_list',
+    BREED_ADD: 'breed_add',
+    USER_ADD: 'user_add',
+    CLEAR_SCREEN: 'clear_screen',
+    EXIT: 'exit'
   };
 
   static async show() {
+    console.log(); // Empty line before main menu
     return await inquirer.prompt({
       type: 'list',
       name: 'option',
-      message: 'What do you want to do?',
+      message: 'Animal Shelter Main Menu - Select an option from below:',
       choices: [
-        OPTION_ANIMAL_ADD,
-        OPTION_ANIMAL_DELETE,
-        OPTION_ANIMAL_LIST,
+        { name: `${chalk.green('🞣')} Register Animal`, value: this.MENU_OPTIONS.ANIMAL_ADD },
+        { name: `${chalk.cyan('≣')}  Manage Animals`, value: this.MENU_OPTIONS.ANIMAL_LIST },
         new inquirer.Separator(),
-        OPTION_BREED_ADD,
+        { name: `${chalk.green('🞣')} Add New Breed`, value: this.MENU_OPTIONS.BREED_ADD },
         new inquirer.Separator(),
-        OPTION_CLEAR_SCREEN,
-        OPTION_EXIT
+        { name: `${chalk.green('🞣')} Add New User`, value: this.MENU_OPTIONS.USER_ADD },
+        new inquirer.Separator(),
+        { name: `${chalk.yellow('⌧')}  Clear Screen`, value: this.MENU_OPTIONS.CLEAR_SCREEN },
+        { name: `${chalk.rgb(...ORANGE_RGB)('⭙')}  Logoff`, value: this.MENU_OPTIONS.EXIT }
       ],
       loop: false,
-      pageSize: 8
+      pageSize: 7
     });
   }
 

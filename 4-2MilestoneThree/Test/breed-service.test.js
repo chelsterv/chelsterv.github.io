@@ -1,3 +1,10 @@
+/**
+ * Establishes the CRUD operations testing for Breed Services
+ * Executes testing against database for error messaging
+ *
+ * Author: Larry McCoy
+ */
+
 import { expect } from 'chai';
 import { Model } from 'sequelize';
 import sinon from 'sinon';
@@ -5,10 +12,13 @@ import database, { seed } from '../../src/db/database.js';
 import Breed from '../../src/db/models/breed.js';
 import BreedService from '../../src/services/breed-service.js';
 
+
+//  Unit test for the read method of the Breed Service functionality
 describe('BreedService', () => {
 
   describe('find', () => {
 
+    // Seed the database for Breed Service read breed method unit test
     before(async () => {
       await database.sync({ force: true });
       await seed();
@@ -102,17 +112,19 @@ describe('BreedService', () => {
         stub.restore();
         done();
       });
-
     });
   });
 
+  // Unit test for the create method of the Breed Service functionality
   describe('create', () => {
 
+    // Seed the database for Breed Service create breed method unit test
     before(async () => {
       await database.sync({ force: true });
       await seed();
     });
 
+    // Establish breed object for create breed method unit test
     const newBreed = {
       name: 'Strange Breed',
       speciesId: 2
