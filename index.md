@@ -15,8 +15,8 @@ I am a 28 year retired Navy veteran that has been working in the software design
 ### Enhancements
 
 * [Enhancement One](https://github.com/chelsterv/chelsterv.github.io/tree/main/3-2MilestoneTwo)
-* [Enhancement Two](https://github.com/chelsterv/chelsterv.github.io/tree/main/4-2MilestoneThre)
-* [Enhancement Three](https://github.com/chelsterv/chelsterv.github.io/tree/main/McCoy_5-2MilestoneFour)
+* [Enhancement Two](https://github.com/chelsterv/chelsterv.github.io/tree/main/4-2MilestoneThree)
+* [Enhancement Three](https://github.com/chelsterv/chelsterv.github.io/tree/main/5-2MilestoneFour)
 
 
 ### Animal Shelter Project
